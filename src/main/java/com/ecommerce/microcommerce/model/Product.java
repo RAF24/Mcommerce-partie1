@@ -1,12 +1,11 @@
 package com.ecommerce.microcommerce.model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
-import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 //@JsonFilter("monFiltreDynamique")
@@ -75,6 +74,6 @@ public class Product {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", prix=" + prix +
-                '}';
+                "}:"+ (prix - prixAchat);
     }
 }
