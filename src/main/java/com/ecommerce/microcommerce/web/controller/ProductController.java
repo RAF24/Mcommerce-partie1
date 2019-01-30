@@ -105,10 +105,15 @@ public class ProductController {
     }
     
     
+    //Méthode de calcul de la marge des produits
+    @GetMapping(value = "/AdminProduits")
+    public String  calculerMargeProduit() {
+    		return 	productDao.findAll().toString();
+    }
     
+    //Méthodes de tri de la liste des produits par ordre alphabétique des noms
     @GetMapping(value = "/TriProduits")
     public List<Product>  trierProduitsParOrdreAlphabetique() {
     		return 	productDao.findAll(new Sort(Sort.Direction.ASC, "nom"));
     }
-
 }
